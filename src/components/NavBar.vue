@@ -1,4 +1,5 @@
-      <a href="#home"></a>
+      <a href="#home" class="home"></a>
+      <a href="#search" class="search"></a>
 
 <script>
 export default {};
