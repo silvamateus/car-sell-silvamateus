@@ -10,4 +10,9 @@ describe("NavBar.vue", () => {
   it("should render", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
+  it("should have 'Início' link", () => {
+    const home = wrapper.find("#home");
+
+    expect(home.exists).toBeTruthy();
+  });
 });
