@@ -20,4 +20,9 @@ describe("NavBar.vue", () => {
 
     expect(search.exists()).toBeTruthy();
   });
+  it("should have 'Sobre' link", () => {
+    const about = wrapper.find(".about");
+
+    expect(about.exists()).toBeTruthy();
+  });
 });
