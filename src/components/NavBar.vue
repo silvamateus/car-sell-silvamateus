@@ -1,4 +1,4 @@
-<template></template>
+      <a href="#home"></a>
 
 <script>
 export default {};
