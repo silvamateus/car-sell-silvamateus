@@ -15,7 +15,9 @@ describe("NavBar.vue", () => {
 
     expect(home.exists()).toBeTruthy();
   });
+  it("should have 'Buscar' link", () => {
+    const search = wrapper.find(".search");
 
-    expect(home.exists).toBeTruthy();
+    expect(search.exists()).toBeTruthy();
   });
 });
