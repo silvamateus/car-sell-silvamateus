@@ -11,7 +11,10 @@ describe("NavBar.vue", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it("should have 'Início' link", () => {
-    const home = wrapper.find("#home");
+    const home = wrapper.find(".home");
+
+    expect(home.exists()).toBeTruthy();
+  });
 
     expect(home.exists).toBeTruthy();
   });
