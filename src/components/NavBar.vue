@@ -5,11 +5,14 @@
         <img :src="logo" alt="spotz logo" class="logo" />
       </div>
       <div class="menu">
+        <transition name="slide">
           <div class="link-list" v-if="show">
             <a href="#home" class="home">Início</a>
             <a href="#search" class="search">Buscar</a>
             <a href="#about" class="about">Sobre</a>
-      </div>
+          </div>
+        </transition>
+        <button @click.stop="showMenu">Botão</button>
       </div>
     </nav>
   </header>
@@ -72,4 +75,31 @@ button {
   width: 8rem;
 }
 
+/* Menu Transition */
+@keyframes slide-in {
+  from {
+    transform: translateY(-60px) rotateX(45deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-60px) rotateX(45deg);
+    opacity: 0;
+  }
+}
+.slide-enter-active {
+  animation: slide-in 0.5s ease;
+}
+.slide-leave-active {
+  animation: slide-out 0.5s ease;
+}
 </style>
