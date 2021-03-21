@@ -29,4 +29,9 @@ describe("NavBar.vue", () => {
 
     expect(about.exists()).toBeTruthy();
   });
+
+  it("should have menu button", () => {
+    const button = wrapper.find("button");
+    expect(button.exists()).toBeTruthy();
+  });
 });
