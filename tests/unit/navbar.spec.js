@@ -8,7 +8,7 @@ describe("NavBar.vue", () => {
       propsData: {
         show: true,
       },
-  });
+    });
   });
 
   it("should render", async () => {
@@ -33,5 +33,10 @@ describe("NavBar.vue", () => {
   it("should have menu button", () => {
     const button = wrapper.find("button");
     expect(button.exists()).toBeTruthy();
+  });
+  it("should emit showMenu", async () => {
+    wrapper.vm.$emit("showMenu", false);
+    await wrapper.vm.$nextTick();
+    expect(wrapper.emitted("showMenu")).toBeTruthy();
   });
 });
