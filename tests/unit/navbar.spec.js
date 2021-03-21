@@ -1,13 +1,17 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import NavBar from "@/components/NavBar.vue";
 
 describe("NavBar.vue", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallowMount(NavBar);
+    wrapper = mount(NavBar, {
+      propsData: {
+        show: true,
+      },
+  });
   });
 
-  it("should render", () => {
+  it("should render", async () => {
     expect(wrapper.exists()).toBeTruthy();
   });
   it("should have 'Início' link", () => {
