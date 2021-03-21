@@ -1,15 +1,24 @@
 <template>
   <header>
-    <nav>
-      <a href="#home" class="home"></a>
-      <a href="#search" class="search"></a>
-      <a href="#about" class="about"></a>
+      <div class="menu">
+          <div class="link-list" v-if="show">
+            <a href="#home" class="home">Início</a>
+            <a href="#search" class="search">Buscar</a>
+            <a href="#about" class="about">Sobre</a>
+      </div>
+      </div>
     </nav>
   </header>
 </template>
 
 <script>
-export default {};
+  props: ["show"],
+  methods: {
+    showMenu() {
+      this.$emit("showMenu", !this.show);
+    },
+  },
+};
 </script>
 
 <style></style>
