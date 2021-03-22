@@ -12,7 +12,7 @@
             <a href="#about" class="about">Sobre</a>
           </div>
         </transition>
-        <button @click.stop="showMenu">Botão</button>
+        <button @click.stop="showMenu"><i class="fas fa-bars"></i></button>
       </div>
     </nav>
   </header>
@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 button {
   color: white !important;
 }
@@ -73,6 +73,9 @@ button {
 }
 .logo {
   width: 8rem;
+}
+.fas.fa-bars {
+  font-size: 2rem;
 }
 
 /* Menu Transition */
