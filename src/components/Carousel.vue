@@ -112,12 +112,13 @@ img {
 .carousel-text h2 {
   padding-bottom: 1rem;
 }
-.carousel-text p {
+.carousel-text > p {
   line-height: 1.5;
+  margin-top: -6rem;
 }
 .indication {
   display: flex;
-  margin: auto;
+  margin: 0 auto;
 }
 .indication-dot {
   width: 5px;
