@@ -2,7 +2,11 @@
   <div id="home">
     <div class="carousel-wrapper">
       <transition name="carousel" mode="out-in">
-        <div v-for="index of [currentIndex]" :key="index" class="carousel">
+        <div
+          v-for="index of [currentIndex]"
+          :key="`car-${index}`"
+          class="carousel"
+        >
           <img :src="currentCar" />
         </div>
       </transition>
@@ -18,7 +22,7 @@
           <div class="indication">
             <p
               v-for="(car, index) of cars"
-              :key="car"
+              :key="`dot-${index}`"
               :class="{ 'indication-dot': true, dot: applyDot(index) }"
             ></p>
           </div>
@@ -33,7 +37,7 @@ import car1 from "../assets/img/go0866gnj.jpg";
 import car2 from "../assets/img/bhjcfts4.jpg";
 import car3 from "../assets/img/chxi20a.jpg";
 import car4 from "../assets/img/fghc453d.jpg";
-import car5 from "../assets/img/gla200opkwe.jpeg";
+import car5 from "../assets/img/hhio86jl.jpg";
 export default {
   data() {
     return {
