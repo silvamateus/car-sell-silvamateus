@@ -18,15 +18,13 @@
           soluta porro earum facere at eos inventore ducimus nesciunt tempore
           eius quod!
         </p>
-        <transition name="dot">
-          <div class="indication">
-            <p
-              v-for="(car, index) of cars"
-              :key="`dot-${index}`"
-              :class="{ 'indication-dot': true, dot: applyDot(index) }"
-            ></p>
-          </div>
-        </transition>
+        <div class="indication">
+          <p
+            v-for="(car, index) of cars"
+            :key="`dot-${index}`"
+            :class="{ 'indication-dot': true, dot: applyDot(index) }"
+          ></p>
+        </div>
       </div>
     </div>
   </div>
@@ -130,6 +128,7 @@ img {
 }
 .dot {
   background-color: rgb(221, 235, 172);
+  transition: background-color 2s ease-in-out;
 }
 /* Carousel Animation */
 @keyframes carousel-enter {
