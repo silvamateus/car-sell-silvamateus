@@ -10,4 +10,8 @@ describe("Carousel.vue", () => {
   it("should render", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
+  it("should have carousel", () => {
+    const carousel = wrapper.find(".carousel-wrapper");
+    expect(carousel.exists()).toBeTruthy();
+  });
 });
