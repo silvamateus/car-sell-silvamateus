@@ -2,16 +2,18 @@
   <div id="app" @click="show = false">
     <nav-bar :show="show" @showMenu="show = $event" />
     <carousel />
+    <search />
   </div>
 </template>
 
 <script>
 import Carousel from "./components/Carousel.vue";
 import NavBar from "./components/NavBar.vue";
+import Search from "./components/Search";
 
 export default {
   name: "App",
-  components: { NavBar, Carousel },
+  components: { NavBar, Carousel, Search },
   data() {
     return {
       show: false,
