@@ -1,9 +1,14 @@
 <template>
-  <div id="search"></div>
+  <div id="search">
+    <card />
+  </div>
 </template>
 
 <script>
-export default {};
+import Card from "./Card.vue";
+export default {
+  components: { Card },
+};
 </script>
 
 <style></style>
