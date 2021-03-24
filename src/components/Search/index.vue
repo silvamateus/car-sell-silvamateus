@@ -1,18 +1,21 @@
 <template>
   <div id="search">
-    <card />
+    <search-bar />
+    <card :cars="cars" />
   </div>
 </template>
 
 <script>
 import Card from "./Card.vue";
 import { get } from "@/services/api";
+import SearchBar from "./SearchBar.vue";
 export default {
   data() {
     return {
       cars: [],
     };
   },
+  components: { Card, SearchBar },
   created() {
     get()
       .then((response) => response.json())
@@ -22,4 +25,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#search {
+  padding: 1rem;
+}
+</style>
