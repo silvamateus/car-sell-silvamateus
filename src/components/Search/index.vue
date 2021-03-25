@@ -54,7 +54,10 @@ export default {
   created() {
     get()
       .then((response) => response.json())
-      .then((response) => (this.cars = response.cars))
+      .then((response) => {
+        this.cars = response.cars;
+        this.properties = response.properties;
+      })
       .catch((err) => console.error(err));
   },
 };
