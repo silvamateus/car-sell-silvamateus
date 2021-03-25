@@ -26,6 +26,31 @@ export default {
     };
   },
   components: { Card, SearchBar },
+  methods: {
+    //will submit the filter and update props
+    submitter(properties) {
+      this.maxKm = properties.maxKm;
+      this.minKm = properties.minKm;
+      this.maxPrice = properties.maxPrice;
+      this.minPrice = properties.minPrice;
+      if (isNaN(properties.maxKm)) {
+        properties.maxKm = this.properties["max_km"];
+      }
+      if (isNaN(properties.minKm)) {
+        properties.minKm = 0;
+      }
+      if (isNaN(properties.maxPrice)) {
+        properties.maxPrice = properties["max_price"];
+      }
+      if (isNaN(properties.minPrice)) {
+        properties.minPrice = properties["min_price"];
+      }
+      get(properties)
+        .then((response) => response.json())
+        .then((response) => (this.cars = response.cars))
+        .catch((err) => console.error(err));
+    },
+  },
   created() {
     get()
       .then((response) => response.json())
