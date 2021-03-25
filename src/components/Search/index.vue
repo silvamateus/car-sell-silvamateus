@@ -7,6 +7,9 @@
       :minPrice="minPrice"
       @toSubmit="submitter($event)"
     />
+    <section class="search-container">
+      <card v-for="car of cars" :car="car" :key="car.id" />
+    </section>
   </div>
 </template>
 
