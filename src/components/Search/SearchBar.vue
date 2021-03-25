@@ -35,6 +35,14 @@ export default {
       type: [Number, String],
     },
   },
+  methods: {
+    toFilter() {
+      this.$emit("toSubmit", {
+        maxPrice: parseFloat(this.maxPrice),
+        minPrice: parseFloat(this.minPrice),
+        maxKm: parseFloat(this.maxKm),
+        minKm: parseFloat(this.minKm),
+      });
     },
   },
 };
