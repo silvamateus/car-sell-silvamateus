@@ -1,7 +1,12 @@
 <template>
   <div id="search">
-    <search-bar />
-    <card :cars="cars" />
+    <search-bar
+      :maxKm="maxKm"
+      :minKm="minKm"
+      :maxPrice="maxPrice"
+      :minPrice="minPrice"
+      @toSubmit="submitter($event)"
+    />
   </div>
 </template>
 
