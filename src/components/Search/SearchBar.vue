@@ -1,22 +1,23 @@
 <template>
-  <div class="search-bar">
+  <form class="search-bar" @submit="toFilter">
     <div>
       <label for="minPrice">Preço Mín.</label>
-      <input type="number" id="minPrice" />
+      <input type="number" id="minPrice" v-model="minPrice" />
     </div>
     <div>
       <label for="maxPrice">Preço Máx.</label>
-      <input type="number" id="maxPrice" />
+      <input type="number" id="maxPrice" v-model="maxPrice" />
     </div>
     <div>
       <label for="minKm">Mín. Kms</label>
-      <input type="number" id="minKm" />
+      <input type="number" id="minKm" v-model="minKm" />
     </div>
     <div>
       <label for="maxKm">Máx. Kms</label>
-      <input type="number" id="maxKm" />
+      <input type="number" id="maxKm" v-model="maxKm" />
     </div>
-  </div>
+    <button type="submit">Filtrar</button>
+  </form>
 </template>
 
 <script>
