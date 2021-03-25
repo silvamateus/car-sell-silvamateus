@@ -1,39 +1,40 @@
 <template>
-  <form class="search-bar" @submit="toFilter">
+  <div class="search-bar">
     <div>
       <label for="minPrice">Preço Mín.</label>
-      <input type="number" id="minPrice" v-model="minPrice" />
+      <input type="number" id="minPrice" />
     </div>
     <div>
       <label for="maxPrice">Preço Máx.</label>
-      <input type="number" id="maxPrice" v-model="maxPrice" />
+      <input type="number" id="maxPrice" />
     </div>
     <div>
       <label for="minKm">Mín. Kms</label>
-      <input type="number" id="minKm" v-model="minKm" />
+      <input type="number" id="minKm" />
     </div>
     <div>
       <label for="maxKm">Máx. Kms</label>
-      <input type="number" id="maxKm" v-model="maxKm" />
+      <input type="number" id="maxKm" />
     </div>
-    <button type="submit">Filtrar</button>
-  </form>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
     maxPrice: {
-      type: Number,
+      type: [Number, String],
     },
     minPrice: {
-      type: Number,
+      type: [Number, String],
     },
     minKm: {
-      type: Number,
+      type: [Number, String],
     },
     maxKm: {
-      type: Number,
+      type: [Number, String],
+    },
+  },
     },
   },
 };
