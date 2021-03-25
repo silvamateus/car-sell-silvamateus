@@ -18,6 +18,11 @@ export default {
   data() {
     return {
       cars: [],
+      properties: {},
+      maxKm: "",
+      minKm: "",
+      maxPrice: "",
+      minPrice: "",
     };
   },
   components: { Card, SearchBar },
