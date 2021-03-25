@@ -15,6 +15,6 @@ const api = async (uri, method, params) =>
  * Required: none
  * Optional: key, value
  */
-export const get = async (key = "", value = "") => {
-  return await api("announcements", "GET", { [key]: value });
+export const get = async (body = {}) => {
+  return await api("announcements", "GET", body);
 };
