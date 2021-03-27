@@ -62,6 +62,16 @@ export default {
   padding-bottom: 1rem;
   width: 12rem;
 }
+button {
+  width: 4rem;
+  background-color: #ddebac;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  transition: background-color 500ms ease-in-out;
+}
+button:hover {
+  background-color: #93a064;
+}
 .search-bar label {
   font-size: 0.8rem;
 }
