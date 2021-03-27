@@ -31,11 +31,11 @@
 </template>
 
 <script>
-import car1 from "../assets/img/go0866gnj.jpg";
-import car2 from "../assets/img/bhjcfts4.jpg";
-import car3 from "../assets/img/chxi20a.jpg";
-import car4 from "../assets/img/fghc453d.jpg";
-import car5 from "../assets/img/hhio86jl.jpg";
+import car1 from "/public/img/go0866gnj.jpg";
+import car2 from "/public/img/bhjcfts4.jpg";
+import car3 from "/public/img/chxi20a.jpg";
+import car4 from "/public/img/fghc453d.jpg";
+import car5 from "/public/img/hhio86jl.jpg";
 export default {
   data() {
     return {
@@ -84,15 +84,16 @@ img {
   height: 100vh;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.432);
   object-fit: cover;
+  z-index: -4;
 }
 /* Carousel */
 .carousel-wrapper {
   width: 100vw;
   position: relative;
+  z-index: -3;
 }
 .carousel {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.241);
   width: 100%;
   flex-direction: column;
 }
@@ -123,7 +124,7 @@ img {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: rgb(160, 160, 160);
+  background-color: #a0a0a0;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.274);
   margin-right: 1rem;
 }
