@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 *,
 *::before,
 *::after {
