@@ -1,5 +1,5 @@
 <template>
-  <form class="search-bar" @submit="toFilter">
+  <form class="search-bar" @submit.prevent="toFilter">
     <div>
       <label for="minPrice">Preço Mín.</label>
       <input type="number" id="minPrice" v-model="minPrice" />
@@ -37,6 +37,7 @@ export default {
     },
   },
   methods: {
+    // emit filters to parent
     toFilter() {
       this.$emit("toSubmit", {
         maxPrice: parseFloat(this.maxPrice),
