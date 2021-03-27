@@ -30,25 +30,26 @@ export default {
   },
   components: { Card, SearchBar },
   methods: {
-    //will submit the filter and update props
+    // submit the filter and update props
     submitter(properties) {
+      let query;
+      if (!isNaN(properties.maxKm)) {
+        query += `maxKm=${properties.maxKm}&`;
+      }
+      if (!isNaN(properties.minKm)) {
+        query += `minKm=${properties.minKm}&`;
+      }
+      if (!isNaN(properties.maxPrice)) {
+        query += `maxPrice=${properties.maxPrice}&`;
+      }
+      if (!isNaN(properties.minPrice)) {
+        query += `minPrice=${properties.minPrice}&`;
+      }
       this.maxKm = properties.maxKm;
       this.minKm = properties.minKm;
       this.maxPrice = properties.maxPrice;
       this.minPrice = properties.minPrice;
-      if (isNaN(properties.maxKm)) {
-        properties.maxKm = this.properties["max_km"];
-      }
-      if (isNaN(properties.minKm)) {
-        properties.minKm = 0;
-      }
-      if (isNaN(properties.maxPrice)) {
-        properties.maxPrice = properties["max_price"];
-      }
-      if (isNaN(properties.minPrice)) {
-        properties.minPrice = properties["min_price"];
-      }
-      get(properties)
+      get(query)
         .then((response) => response.json())
         .then((response) => (this.cars = response.cars))
         .catch((err) => console.error(err));
@@ -69,5 +70,9 @@ export default {
 <style>
 #search {
   padding: 1rem;
+}
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
