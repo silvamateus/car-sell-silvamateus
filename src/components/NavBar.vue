@@ -62,10 +62,11 @@ button {
   background-color: #ddebac;
   padding: 1rem;
   position: fixed;
-  right: 4rem;
+  right: 3rem;
   top: 3rem;
   border-radius: 0.5rem;
   color: #000;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.357);
 }
 .link-list a {
   padding: 0 1rem;
