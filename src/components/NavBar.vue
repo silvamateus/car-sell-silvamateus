@@ -46,6 +46,7 @@ button {
   width: 100vw;
   align-items: center;
   padding: 1rem;
+  z-index: 10;
 }
 /* Menu*/
 .menu {
