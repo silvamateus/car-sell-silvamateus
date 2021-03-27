@@ -50,10 +50,12 @@ export default {
 </script>
 
 <style scoped>
+/* Search Bar */
 .search-bar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
 .search-bar > div {
   display: flex;
