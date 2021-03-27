@@ -21,3 +21,7 @@ const api = async (uri, method, query = null, params = null) => {
 export const get = async (query) => {
   return await api("announcements", "GET", query);
 };
+
+export const post = async (params) => {
+  return await api("contacts", "POST", null, params);
+};
