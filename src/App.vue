@@ -3,6 +3,7 @@
     <nav-bar :show="show" @showMenu="show = $event" />
     <carousel />
     <search />
+    <page-footer />
   </div>
 </template>
 
@@ -10,10 +11,11 @@
 import Carousel from "./components/Carousel.vue";
 import NavBar from "./components/NavBar.vue";
 import Search from "./components/Search";
+import PageFooter from "./components/PageFooter.vue";
 
 export default {
   name: "App",
-  components: { NavBar, Carousel, Search },
+  components: { NavBar, Carousel, Search, PageFooter },
   data() {
     return {
       show: false,
