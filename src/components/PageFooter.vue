@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer" id="about">
     <div class="others">
       <a href="#">Termos de uso</a>
       <a href="#">Política de privacidade</a>
