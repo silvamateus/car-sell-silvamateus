@@ -1,24 +1,52 @@
 # car-sell-silvamateus
 
-## Project setup
+## Sobre
+
+Este repositório é um teste técnico feito com Vuejs
+
+## Solicitação da empresa
+
+Criar um sistema que liste anúncios de carros e permita entrar em contato usando o id do anúncio
+
+### Requisitos
+
+- O teste deve ser realizado em VueJS.
+
+### Pontos de atenção
+
+- A página deve ser responsiva sem a utilização de frameworks css.
+- Devemos evitar a utilização de bibliotecas de terceiros (pacotes npm) para
+  componentes Vue.
+- Está permitido o uso de pré-processadores para o seu css e/ou html.
+
+## Como usar
+
+Para usar em ambiente local faça clone do repositório: `https://github.com/silvamateus/car-sell-silvamateus.git`
+depois entre no repositório do projeto: `cd car-sell-silvamateus`
+E rode o script para instalar as dependências: `npm install ou yarn install`
+
+## Scripts
+
+### Para Compilar para ambiente de desenvolvimento (com hot-reload)
+
 ```
-yarn install
+yarn serve ou npm run serve
 ```
 
-### Compiles and hot-reloads for development
+### Para compilar e minificar para produção
+
 ```
-yarn serve
+yarn build ou npm run build
 ```
 
-### Compiles and minifies for production
+### Para fazer lint do código (eslint + prettier)
+
 ```
-yarn build
+yarn lint ou npm run link
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+### Para rodar os teste
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+yarn test:unit ou npm run test:unit
+```
