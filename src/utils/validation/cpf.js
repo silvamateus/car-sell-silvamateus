@@ -1,6 +1,6 @@
 export const CPFValidation = (cpf) => {
-  let sum;
-  let mod;
+  let sum = 0;
+  let mod = 0;
   // validate 1st digit
   sum = 0;
   if (
@@ -18,19 +18,25 @@ export const CPFValidation = (cpf) => {
     return false;
   }
   for (let i = 0; i <= 9; i++) {
-    sum += parseInt(cpf.substring(i - 1, i)) * (11 - i); // sums all numbers untill 9th digit
+    sum += parseInt(cpf.substring(i - 1, i)) * (11 - i); // sums all numbers untill 10th digit
+    if (isNaN(sum)) {
+      sum = 0;
+    }
   }
   mod = (sum * 10) % 11;
   if (mod === 10 || mod === 11) {
     mod = 0;
   }
-  if (mod !== parseInt(cpf.substring(9, 10))) {
+  if (mod != parseInt(cpf.substring(9, 10))) {
     return false;
   }
   // validate 2nd digit
   sum = 0;
   for (let i = 1; i <= 10; i++) {
-    sum = sum + parseInt(cpf.substring(i - 1, i)) * (12 - i); // sums all numbers untill 10th digit
+    sum = sum + parseInt(cpf.substring(i - 1, i)) * (12 - i); // sums all numbers untill 11th digit
+    if (isNaN(sum)) {
+      sum = 0;
+    }
   }
   mod = (sum * 10) % 11;
 
