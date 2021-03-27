@@ -1,20 +1,23 @@
 /*
  * Api call
- * Required: uri, method, params
+ * Required: uri, method
+ * Optional: query, params
  */
-const api = async (uri, method, params) =>
-  await fetch(
-    `https://us-central1-spotz-prod.cloudfunctions.net/function-sell-my-car/${uri}`,
+const api = async (uri, method, query = null, params = null) => {
+  const queryString = query ? `?${query}` : "";
+  return await fetch(
+    `https://us-central1-spotz-prod.cloudfunctions.net/function-sell-my-car/${uri}${queryString}`,
     {
       method,
-      params,
+      body: params,
     }
   );
+};
 /*
  * GET method
  * Required: none
- * Optional: key, value
+ * Optional: query
  */
-export const get = async (body = {}) => {
-  return await api("announcements", "GET", body);
+export const get = async (query) => {
+  return await api("announcements", "GET", query);
 };
