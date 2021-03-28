@@ -31,15 +31,16 @@
 </template>
 
 <script>
-import car1 from "/public/img/go0866gnj.jpg";
-import car2 from "/public/img/bhjcfts4.jpg";
-import car3 from "/public/img/chxi20a.jpg";
-import car4 from "/public/img/fghc453d.jpg";
-import car5 from "/public/img/hhio86jl.jpg";
 export default {
   data() {
     return {
-      cars: [car1, car2, car3, car4, car5],
+      cars: [
+        "/img/go0866gnj.jpg",
+        "/img/bhjcfts4.jpg",
+        "/img/chxi20a.jpg",
+        "/img/fghc453d.jpg",
+        "/img/hhio86jl.jpg",
+      ],
       currentIndex: 0,
     };
   },
