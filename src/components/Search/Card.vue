@@ -73,15 +73,8 @@ button:hover {
   background-color: var(--green);
   border-radius: var(--default-radius);
   margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
   width: 17.9rem;
   position: relative;
-}
-.card-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 /* Car text style */
 .car-name {
