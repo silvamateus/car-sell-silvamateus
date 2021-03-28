@@ -1,22 +1,20 @@
 <template>
-  <form @submit.prevent="contact" v-if="showForm">
-    <div class="contact-form">
-      <h2>Entre em Contato</h2>
-      <label for="name">Nome</label>
-      <input type="text" id="name" v-model="name" required />
-      <label for="cpf">CPF</label>
-      <input type="text" id="cpf" v-model="cpf" maxlength="11" required />
-      <transition name="invalid">
-        <p v-if="!validCPF" class="invalid">cpf invalido</p>
-      </transition>
-      <label for="email">E-mail</label>
-      <input type="email" id="email" v-model="email" required />
-      <label for="phone">Celular</label>
-      <input type="text" id="phone" v-model="phone" maxlength="11" required />
-      <div class="actions">
-        <button @click="close" class="cancel">Cancelar</button>
-        <button type="submit" class="submit">Enviar</button>
-      </div>
+  <form @submit.prevent="contact">
+    <h2>Entre em Contato</h2>
+    <label for="name">Nome</label>
+    <input type="text" id="name" v-model="name" required />
+    <label for="cpf">CPF</label>
+    <input type="text" id="cpf" v-model="cpf" maxlength="11" required />
+    <transition name="invalid">
+      <p v-if="!validCPF" class="invalid">cpf invalido</p>
+    </transition>
+    <label for="email">E-mail</label>
+    <input type="email" id="email" v-model="email" required />
+    <label for="phone">Celular</label>
+    <input type="text" id="phone" v-model="phone" maxlength="11" required />
+    <div class="actions">
+      <button @click="close" class="cancel">Cancelar</button>
+      <button type="submit" class="submit">Enviar</button>
     </div>
   </form>
 </template>
@@ -31,18 +29,11 @@ export default {
       cpf: "",
       email: "",
       phone: "",
-      showForm: false,
       validCPF: true,
     };
   },
   props: {
-    showContactForm: { type: Boolean },
     carId: { type: String },
-  },
-  watch: {
-    showContactForm(newValue) {
-      this.showForm = newValue;
-    },
   },
   methods: {
     clean() {
@@ -88,19 +79,6 @@ export default {
 
 <style scoped>
 form {
-  display: flex;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.439);
-  justify-content: center;
-  align-items: center;
-  z-index: 11;
-}
-.contact-form {
   display: flex;
   flex-direction: column;
   background-color: var(--white);

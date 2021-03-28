@@ -9,14 +9,14 @@
       </div>
       <div>
         <p class="car-km">{{ car.km }}<span>km</span></p>
-        <button @click="toShowContactForm">Entrar em contato</button>
+        <button @click="toShowContactForm" class="call-contact">
+          Entrar em contato
+        </button>
       </div>
     </div>
-    <contact-form
-      :showContactForm="showContactForm"
-      :carId="car.id"
-      @closeForm="closeForm($event)"
-    />
+    <div class="contact-form" v-if="showContactForm">
+      <contact-form :carId="car.id" @closeForm="closeForm($event)" />
+    </div>
   </div>
 </template>
 
@@ -94,7 +94,21 @@ button:hover {
   font-size: calc(1.2rem + var(--increase-font));
   font-weight: 700;
 }
-
+/* Contact Form */
+.contact-form {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.439);
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+/* Media Queries */
 @media (min-width: 720px) {
   .card {
     margin: 1rem 0 1rem 1rem;
