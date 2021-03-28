@@ -43,5 +43,22 @@ describe("Mock api methods", () => {
       },
     });
     expect(fetch).toHaveBeenCalledTimes(1);
-});
+  });
+  beforeEach(() => fetch.mockClear());
 
+  it("sends contact form post request", async () => {
+    fetch.mockImplementationOnce(() => Promise.reject({ status: 404 }));
+    const postContact = await post(
+      JSON.stringify({
+        announcement_id: "hghvk",
+        contact: {
+          name: "Claus",
+          cpf: "44843104060",
+          phone: "(22)66589-6589",
+          email: "email@email.com",
+        },
+      })
+    );
+    expect(postContact.status).toEqual(404);
+  });
+});
