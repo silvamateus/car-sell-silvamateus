@@ -2,7 +2,30 @@ import { mount } from "@vue/test-utils";
 import Search from "@/components/Search";
 import Card from "@/components/Search/Card.vue";
 import SearchBar from "@/components/Search/SearchBar.vue";
-import ContactForm from "@/components/Search/ContactForm.vue";
+
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () =>
+      Promise.resolve({
+        cars: [
+          {
+            id: "hghvk",
+            image: "hghvk.jpg",
+            name: "Golf",
+            brand: "Wolksvagem",
+            km: 0,
+            price: 5999990,
+          },
+        ],
+        count: 5,
+        properties: {
+          max_price: 36723000,
+          min_price: 60000,
+          max_km: 12000,
+        },
+      }),
+  })
+);
 
 describe("Search/index.vue", () => {
   let wrapper;
@@ -14,10 +37,23 @@ describe("Search/index.vue", () => {
   it("should render", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
+
   it("should render SearchBar", () => {
     const searchBar = wrapper.findComponent(SearchBar);
     expect(searchBar.exists()).toBeTruthy();
   });
+
+  it("should emit toSubmit", () => {
+    const searchBar = wrapper.findComponent(SearchBar);
+    searchBar.vm.$emit("toSubmit", {
+      maxPrice: 0,
+      minPrice: 0,
+      maxKm: 0,
+      minKm: 0,
+    });
+    expect(searchBar.emitted().toSubmit).toBeTruthy;
+  });
+
   it("should render Card", () => {
     const card = mount(Card, {
       propsData: {
@@ -25,14 +61,5 @@ describe("Search/index.vue", () => {
       },
     });
     expect(card.exists()).toBeTruthy();
-  });
-  it("should render ContactForm", () => {
-    const contactForm = mount(Card, {
-      propsData: {
-        car: { name: "", brand: "", image: "", id: "", price: 0 },
-      },
-    }).findComponent(ContactForm);
-
-    expect(contactForm.exists()).toBeTruthy();
   });
 });
