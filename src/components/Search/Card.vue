@@ -55,22 +55,23 @@ img {
 }
 h2 {
   font-size: calc(0.9rem + var(--increase-font));
-  color: #a0a0a0;
+  color: #212121;
 }
 button {
   font-size: calc(0.8rem + var(--increase-font));
   padding: 1rem;
-  box-shadow: 0 0 3px 0 rgba(9, 9, 9, 0.385);
   border-radius: var(--default-radius);
   transition: background-color 500ms ease-in-out;
+  background-color: var(--button-color);
+  color: var(--white);
 }
 button:hover {
-  background-color: var(--dark-green);
+  background-color: var(--button-hover-color);
 }
 /* Card */
 .card {
   padding: 1rem;
-  background-color: var(--green);
+  background-color: var(--white);
   border-radius: var(--default-radius);
   margin: 1rem auto;
   width: 17.9rem;
@@ -91,6 +92,7 @@ button:hover {
 }
 .car-price {
   font-size: calc(1.2rem + var(--increase-font));
+  font-weight: 700;
 }
 
 @media (min-width: 720px) {

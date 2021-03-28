@@ -26,7 +26,7 @@ export default {};
   padding: 1rem;
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--white);
 }
 .footer a,
 .footer p {

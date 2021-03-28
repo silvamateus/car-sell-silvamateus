@@ -76,7 +76,6 @@ export default {
 
 <style>
 #search {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   position: relative;

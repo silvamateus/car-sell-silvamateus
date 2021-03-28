@@ -26,9 +26,11 @@ export default {
 
 <style>
 :root {
-  --green: #ddebac;
-  --dark-green: #93a064;
+  --white: #e4f0ff;
+  --gray: #717788;
   --default-radius: 0.3rem;
+  --button-color: #2a75bb;
+  --button-hover-color: #064e92;
   --increase-font: 0rem;
 }
 html {
@@ -40,7 +42,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(162, 162, 162);
+  background-color: var(--gray);
 }
 #app {
   font-family: "Montserrat", sans-serif;

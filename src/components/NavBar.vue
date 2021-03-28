@@ -78,6 +78,7 @@ button {
   transition: top 300ms;
 }
 .navbar--hidden {
+  top: -4rem;
   animation: hide-navbar 300ms ease-in-out;
 }
 .navbar--show {
@@ -111,7 +112,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--green);
+  background-color: var(--white);
   padding: 1rem;
   position: fixed;
   right: 3rem;

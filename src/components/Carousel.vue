@@ -77,11 +77,10 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
 }
 img {
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.432);
   object-fit: cover;
   z-index: -4;
@@ -101,7 +100,7 @@ img {
   background-color: rgba(0, 0, 0, 0.432);
   height: 100%;
   width: 100%;
-  color: #fff;
+  color: var(--white);
   padding: 1rem;
   position: absolute;
   bottom: 0;
@@ -129,7 +128,7 @@ img {
   margin-right: 1rem;
 }
 .dot {
-  background-color: var(--green);
+  background-color: var(--white);
   transition: background-color 2s ease-in-out;
 }
 /* Carousel Animation */

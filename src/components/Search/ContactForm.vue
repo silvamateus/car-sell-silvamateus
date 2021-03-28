@@ -104,7 +104,7 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-  background-color: var(--green);
+  background-color: var(--white);
   padding: 1rem;
   border-radius: var(--default-radius);
 }
@@ -112,7 +112,7 @@ form {
   font-size: calc(0.6rem + var(--increase-font));
 }
 .contact-form input {
-  border: 2px solid #fff;
+  border: 2px solid var(--white);
   border-radius: var(--default-radius);
   margin-bottom: 1rem;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.329);
@@ -125,22 +125,22 @@ form {
 .submit {
   padding: 1rem;
   border-radius: var(--default-radius);
-  transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out;
 }
 .cancel {
   margin-right: 0.5rem;
-  background-color: rgb(243, 20, 20);
-  color: #fff;
+  background-color: #f31414;
+  color: var(--white);
 }
 .cancel:hover {
-  background-color: rgb(145, 14, 14);
+  background-color: #770d0d;
 }
 .submit {
-  box-shadow: 0 0 10px 0 rgba(9, 9, 9, 0.508);
+  background-color: var(--button-color);
+  color: var(--white);
 }
 .submit:hover {
-  background-color: #687638;
-  color: #fff;
+  background-color: var(--button-hover-color);
 }
 @media (min-width: 720px) {
   form {
