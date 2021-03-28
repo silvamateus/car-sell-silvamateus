@@ -129,7 +129,7 @@ img {
   margin-right: 1rem;
 }
 .dot {
-  background-color: #ddebac;
+  background-color: var(--green);
   transition: background-color 2s ease-in-out;
 }
 /* Carousel Animation */
