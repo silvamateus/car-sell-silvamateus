@@ -6,6 +6,9 @@
       <input type="text" id="name" v-model="name" required />
       <label for="cpf">CPF</label>
       <input type="text" id="cpf" v-model="cpf" maxlength="11" required />
+      <transition name="invalid">
+        <p v-if="!validCPF" class="invalid">cpf invalido</p>
+      </transition>
       <label for="email">E-mail</label>
       <input type="email" id="email" v-model="email" required />
       <label for="phone">Celular</label>
@@ -29,6 +32,7 @@ export default {
       email: "",
       phone: "",
       showForm: false,
+      validCPF: true,
     };
   },
   props: {
@@ -47,8 +51,13 @@ export default {
       this.email = "";
       this.phone = "";
     },
+    validateCPF() {
+      return CPFValidation(this.cpf.replace(/\.|-/g, "")) && this.cpf !== "";
+    },
     contact() {
-      if (!CPFValidation(this.cpf.replace(/\.|-/g, ""))) {
+      if (!this.validateCPF()) {
+        this.validCPF = false;
+        setTimeout(() => (this.validCPF = true), 1000);
         return false;
       }
       const body = {
@@ -97,6 +106,7 @@ form {
   background-color: var(--white);
   padding: 1rem;
   border-radius: var(--default-radius);
+  position: relative;
 }
 .contact-input lable {
   font-size: calc(0.6rem + var(--increase-font));
@@ -104,7 +114,7 @@ form {
 .contact-form input {
   border: 2px solid var(--white);
   border-radius: var(--default-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.329);
 }
 .contact-form h2 {
@@ -132,6 +142,55 @@ form {
 .submit:hover {
   background-color: var(--button-hover-color);
 }
+/* Invalid cpf */
+.invalid {
+  position: absolute;
+  top: 11.8rem;
+  right: 1rem;
+  background-color: var(--gray);
+  border-radius: var(--default-radius);
+  padding: 0.4rem;
+  color: var(--white);
+}
+.invalid::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid var(--gray);
+  right: -3px;
+  top: -3px;
+  border-radius: var(--default-radius);
+  transform: rotateZ(-90deg);
+}
+.invalid-enter-active {
+  animation: enter-invalid 500ms ease-in;
+}
+.invalid-leave-active {
+  animation: leave-invalid 500ms ease-out;
+}
+
+/* Animations */
+@keyframes enter-invalid {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes leave-invalid {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Media Query */
 @media (min-width: 720px) {
   form {
     padding: 2rem;
