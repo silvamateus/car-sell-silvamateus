@@ -6,12 +6,23 @@ describe("ContactForm.vue", () => {
   beforeEach(() => {
     wrapper = mount(ContactForm, {
       propsData: {
-        showContactForm: true,
+        carId: "hghvk",
       },
     });
   });
 
   it("should render ContactForm", () => {
     expect(wrapper.exists()).toBeTruthy;
+  });
+
+  it("should click toSubmit", () => {
+    wrapper.setData({
+      name: "Claus",
+      cpf: "44843104060",
+      phone: "(22)66589-6589",
+      email: "email@email.com",
+    });
+    wrapper.trigger("submit.prevent");
+    expect(wrapper.emitted()).toBeTruthy();
   });
 });
