@@ -5,13 +5,17 @@
  */
 const api = async (uri, method, query = null, params = null) => {
   const queryString = query ? `?${query}` : "";
-  return await fetch(
-    `https://us-central1-spotz-prod.cloudfunctions.net/function-sell-my-car/${uri}${queryString}`,
-    {
-      method,
-      body: params,
-    }
-  );
+  try {
+    return await fetch(
+      `https://us-central1-spotz-prod.cloudfunctions.net/function-sell-my-car/${uri}${queryString}`,
+      {
+        method,
+        body: params,
+      }
+    );
+  } catch (error) {
+    return error;
+  }
 };
 /*
  * GET method
