@@ -1,6 +1,9 @@
 <template>
   <header>
-    <nav class="nav-bar">
+    <nav
+      class="nav-bar"
+      :class="{ 'navbar--hidden': !showNavbar, 'navbar--show': showNavbar }"
+    >
       <div>
         <img :src="logo" alt="spotz logo" class="logo" />
       </div>
@@ -24,6 +27,8 @@ export default {
   data() {
     return {
       logo: logo,
+      showNavbar: true,
+      lastScrollPosition: 0,
     };
   },
   props: ["show"],
@@ -31,6 +36,29 @@ export default {
     showMenu() {
       this.$emit("showMenu", !this.show);
     },
+    onScroll() {
+      // Get the current scroll position
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollPosition < 0) {
+        return; //for mobile momentum scroll
+      }
+
+      // Stop executing this function if the difference between
+      // current scroll position and last scroll position is less than some offset
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+        return;
+      }
+      // Set showNavbar and lastScrollPosition
+      this.showNavbar = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>
@@ -47,6 +75,30 @@ button {
   align-items: center;
   padding: 1rem;
   z-index: 10;
+  transition: top 300ms;
+}
+.navbar--hidden {
+  animation: hide-navbar 300ms ease-in-out;
+}
+.navbar--show {
+  animation: show-navbar 300ms ease-in-out;
+}
+
+@keyframes show-navbar {
+  from {
+    top: -4rem;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes hide-navbar {
+  from {
+    top: 0;
+  }
+  to {
+    top: -4rem;
+  }
 }
 /* Menu*/
 .menu {
