@@ -64,4 +64,10 @@ export default {};
 .others > a:hover {
   color: rgb(81, 81, 158);
 }
+/* Media queries */
+@media (min-width: 720px) {
+  .footer {
+    justify-content: space-between;
+  }
+}
 </style>
