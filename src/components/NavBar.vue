@@ -69,7 +69,7 @@ button {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.357);
 }
 .link-list a {
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   color: inherit;
 }
