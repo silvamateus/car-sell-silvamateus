@@ -25,6 +25,12 @@ export default {
 </script>
 
 <style>
+:root {
+  --green: #ddebac;
+  --dark-green: #93a064;
+  --default-radius: 0.3rem;
+  --increase-font: 0rem;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -40,5 +46,12 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 1440px;
+  margin: auto;
+}
+@media (min-width: 720px) {
+  :root {
+    --increase-font: 0.2rem;
+  }
 }
 </style>
