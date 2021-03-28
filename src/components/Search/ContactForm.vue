@@ -104,16 +104,16 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-  background-color: #ddebac;
+  background-color: var(--green);
   padding: 1rem;
-  border-radius: 0.3rem;
+  border-radius: var(--default-radius);
 }
 .contact-input lable {
-  font-size: 0.6rem;
+  font-size: calc(0.6rem + var(--increase-font));
 }
 .contact-form input {
   border: 2px solid #fff;
-  border-radius: 0.3rem;
+  border-radius: var(--default-radius);
   margin-bottom: 1rem;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.329);
 }
@@ -124,7 +124,7 @@ form {
 .cancel,
 .submit {
   padding: 1rem;
-  border-radius: 0.3rem;
+  border-radius: var(--default-radius);
   transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
 }
 .cancel {
@@ -141,5 +141,10 @@ form {
 .submit:hover {
   background-color: #687638;
   color: #fff;
+}
+@media (min-width: 720px) {
+  form {
+    padding: 2rem;
+  }
 }
 </style>

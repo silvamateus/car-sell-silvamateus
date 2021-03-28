@@ -67,19 +67,20 @@ export default {
 }
 button {
   width: 4rem;
-  background-color: #ddebac;
+  background-color: var(--green);
   padding: 0.5rem;
-  border-radius: 0.3rem;
+  font-size: calc(0.8rem + var(--increase-font));
+  border-radius: var(--default-radius);
   transition: background-color 500ms ease-in-out;
 }
 button:hover {
-  background-color: #93a064;
+  background-color: var(--dark-green);
 }
 .search-bar label {
-  font-size: 0.8rem;
+  font-size: calc(0.8rem + var(--increase-font));
 }
 .search-bar input {
-  border: 2px solid #ddebac;
+  border: 2px solid var(--green);
   border-radius: 0.5rem;
   width: 5rem;
 }

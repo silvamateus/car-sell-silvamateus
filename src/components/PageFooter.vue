@@ -34,13 +34,13 @@ export default {};
   color: #000;
 }
 .footer p {
-  font-size: 0.6rem;
+  font-size: calc(0.6rem + var(--increase-font));
   padding-bottom: 0.5rem;
 }
 /* Where to find us */
 .where-to-find {
   border: 1px solid rgb(213, 213, 213);
-  border-radius: 0.3rem;
+  border-radius: var(--default-radius);
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ export default {};
 .others {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: calc(0.8rem + var(--increase-font));
 }
 .others > a {
   padding: 0.5rem;

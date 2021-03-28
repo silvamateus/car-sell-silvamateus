@@ -70,9 +70,22 @@ export default {
 <style>
 #search {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .search-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .search-container {
+    width: 100%;
+  }
+}
+@media (min-width: 720px) {
+  .search-container {
+    justify-content: center;
+  }
 }
 </style>

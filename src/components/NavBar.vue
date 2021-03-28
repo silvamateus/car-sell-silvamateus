@@ -59,7 +59,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ddebac;
+  background-color: var(--green);
   padding: 1rem;
   position: fixed;
   right: 3rem;
@@ -77,7 +77,7 @@ button {
   width: 8rem;
 }
 .fas.fa-bars {
-  font-size: 2rem;
+  font-size: calc(2rem + var(--increase-font));
 }
 
 /* Menu Transition */
