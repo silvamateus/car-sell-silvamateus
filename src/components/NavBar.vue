@@ -15,7 +15,9 @@
             <a href="#about" class="about">Sobre</a>
           </div>
         </transition>
-        <button @click.stop="showMenu"><i class="fas fa-bars"></i></button>
+        <button @click.stop="showMenu" class="show-menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
   </header>
